@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Test1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.crmOrganisationTest.CreateContactWithOrgTest">
+        <methods>
+          <include name="ctreateOrgTest"/>
+          <include name="closeDb"/>
+          <include name="launchTHeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="connectDataBase"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.crmOrganisationTest.CreateContactWithOrgTest -->
+      <class name="com.crmCampaignTest.CreateConatctWithOrgTest">
+        <methods>
+          <include name="closeDb"/>
+          <include name="launchTHeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="connectDataBase"/>
+          <include name="createcontactwithorgTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.crmCampaignTest.CreateConatctWithOrgTest -->
+      <class name="com.crmOrganisationTest.CreateOrganizationWithPropertyFileTest">
+        <methods>
+          <include name="closeDb"/>
+          <include name="launchTHeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="connectDataBase"/>
+          <include name="CreateOrgTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.crmOrganisationTest.CreateOrganizationWithPropertyFileTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test thread-count="2" parallel="tests" name="Test2(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.crmOrganisationTest.CreateContactWithOrgTest">
+        <methods>
+          <include name="ctreateOrgTest"/>
+          <include name="closeDb"/>
+          <include name="launchTHeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="connectDataBase"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.crmOrganisationTest.CreateContactWithOrgTest -->
+      <class name="com.crmCampaignTest.CreateConatctWithOrgTest">
+        <methods>
+          <include name="closeDb"/>
+          <include name="launchTHeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="connectDataBase"/>
+          <include name="createcontactwithorgTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.crmCampaignTest.CreateConatctWithOrgTest -->
+      <class name="com.crmOrganisationTest.CreateOrganizationWithPropertyFileTest">
+        <methods>
+          <include name="closeDb"/>
+          <include name="launchTHeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="connectDataBase"/>
+          <include name="CreateOrgTest"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.crmOrganisationTest.CreateOrganizationWithPropertyFileTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
