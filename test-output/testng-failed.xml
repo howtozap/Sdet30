@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crmOrganisationTest.CreateOrganizationWithPropertyFileTest">
+      <class name="com.crm.OpportunityTest.CreateOpportunitiesWithContactAndEmploye">
         <methods>
-          <include name="closeDb"/>
-          <include name="launchTHeBrowser"/>
-          <include name="logout"/>
-          <include name="closeBrowser"/>
-          <include name="connectDataBase"/>
-          <include name="CreateOrgTest"/>
-          <include name="login"/>
+          <include name="createOpportunitiesWithContactAndEmployeeTest"/>
         </methods>
-      </class> <!-- com.crmOrganisationTest.CreateOrganizationWithPropertyFileTest -->
+      </class> <!-- com.crm.OpportunityTest.CreateOpportunitiesWithContactAndEmploye -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

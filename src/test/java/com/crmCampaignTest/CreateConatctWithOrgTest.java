@@ -50,6 +50,7 @@ public class CreateConatctWithOrgTest extends BaseClass
 				/*step4: navigate to contact link*/
 				HomePage hp=new HomePage(driver);
 				hp.clickOnContactLnk();
+				Assert.fail();
 				
 				ContactsPage cp=new ContactsPage(driver);
 				cp.clickOnCreateContImg();

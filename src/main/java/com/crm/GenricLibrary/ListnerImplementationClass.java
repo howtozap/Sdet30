@@ -12,8 +12,15 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
 public class ListnerImplementationClass implements ITestListener
 {
+	ExtentReports reports;
+	ExtentTest text;
 
 	public void onTestStart(ITestResult result) 
 	{
@@ -29,6 +36,8 @@ public class ListnerImplementationClass implements ITestListener
 
 	public void onTestFailure(ITestResult result) 
 	{
+		String path=null;
+		
 		String failTestName=result.getMethod().getMethodName();
 		 EventFiringWebDriver eDriver = new EventFiringWebDriver(BaseClass.sDriver);
 		  File scrFile = eDriver.getScreenshotAs(OutputType.FILE);
@@ -48,19 +57,19 @@ public class ListnerImplementationClass implements ITestListener
 	
 		  
 	
-//		String MethodName = result.getMethod().getMethodName()+"-";
-//		String screeshotName = MethodName+new JavaUtility().getSystemDate();
-//		
-//		try {
-//			new WebDriverUtility().getScreenShot(BaseClass.sDriver, screeshotName);
-//			
-//		} catch (IOException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		String MethodName = result.getMethod().getMethodName()+"-";
+	String screeshotName = MethodName+new JavaUtility().getSystemDate();
+	
+	try {
+		path=new WebDriverUtility().getScreenShot(BaseClass.sDriver, screeshotName);
 		
-	//	Reporter.log(MethodName+"----Test script is failed",true);
+	} catch (IOException e)
+	{
+		// TODO Auto-generated catch block
+			e.printStackTrace();
+	}
+		
+	Reporter.log(MethodName+"----Test script is failed",true);
 	}
 
 	public void onTestSkipped(ITestResult result)
@@ -82,11 +91,23 @@ public class ListnerImplementationClass implements ITestListener
 
 	public void onStart(ITestContext context) 
 	{
+		//Execution will start here
+		/*cofigure the report*/
+		ExtentSparkReporter htmlReport=new ExtentSparkReporter("./ExtentReports/Report"+new JavaUtility().getSystemDate()+".html");
+		htmlReport.config().setDocumentTitle("SDET-30 Execution Reort");
+		htmlReport.config().setTheme(Theme.DARK);
+		htmlReport.config().setReportName("Selenium Execution Report");
 		
+	reports	=new ExtentReports();
+	reports.attachReporter(htmlReport);
+	reports.setSystemInfo("Base-Browser","Chrome");
+	reports.setSystemInfo("Reporter Name", "Prashant");
 	}
 
 	public void onFinish(ITestContext context) 
 	{
+		//consolidate all the parameters and generate the report
+		reports.flush();
 		
 	}
 

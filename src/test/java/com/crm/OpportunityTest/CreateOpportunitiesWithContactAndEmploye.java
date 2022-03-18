@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.GenricLibrary.ExcelFileUtility;
@@ -15,8 +17,9 @@ import com.crm.GenricLibrary.PropertyFile;
 import com.crm.GenricLibrary.WebDriverUtility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+@Listeners(com.crm.GenricLibrary.ListnerImplementationClass.class)
 public class CreateOpportunitiesWithContactAndEmploye {
+	
 	@Test
 	public void createOpportunitiesWithContactAndEmployeeTest() throws Throwable 
 	{
@@ -75,6 +78,7 @@ public class CreateOpportunitiesWithContactAndEmploye {
 		/*Step 6: Enter Mandatory field and Save */
 		driver.findElement(By.name("lastname")).sendKeys(lastName);
 		driver.findElement(By.xpath("//input[@class='crmbutton small save']")).click();
+		Assert.fail();
 		
 		/*Step 7: Verification Product */
 		String header = driver.findElement(By.className("dvHeaderText")).getText();
@@ -158,7 +162,7 @@ public class CreateOpportunitiesWithContactAndEmploye {
 		
 		/*Step 17: logout and close the browser*/
 		WebElement element = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		wLib.mouseHover(driver, element);
+		wLib.selectMouseHouer(driver, element);
 		
 		driver.findElement(By.linkText("Sign Out")).click();
 		driver.quit();	

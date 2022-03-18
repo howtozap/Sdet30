@@ -254,11 +254,13 @@ public class WebDriverUtility {
 			
 		}
 	}
-		public void getScreenShot(WebDriver driver,String screenShotName) throws IOException {
+		public String getScreenShot(WebDriver driver,String screenShotName) throws IOException {
 			TakesScreenshot ts=(TakesScreenshot) driver;
 	    	File src=ts.getScreenshotAs(OutputType.FILE);
 	    	File dest=new File("./screenshot/"+screenShotName+".PNG");
 	    	Files.copy(src, dest);
+	    	  String path = dest.getAbsolutePath();
+	    	  return path;
 		
 	}
 		public void scrollAction(WebDriver driver) {
