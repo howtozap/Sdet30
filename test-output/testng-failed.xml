@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.OpportunityTest.CreateOpportunitiesWithContactAndEmploye">
+      <class name="com.crm.PractiseTest.SampleJDBCExecutorUpdate">
         <methods>
-          <include name="createOpportunitiesWithContactAndEmployeeTest"/>
+          <include name="sampleJDBCExecutorUpdate"/>
         </methods>
-      </class> <!-- com.crm.OpportunityTest.CreateOpportunitiesWithContactAndEmploye -->
+      </class> <!-- com.crm.PractiseTest.SampleJDBCExecutorUpdate -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
